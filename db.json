@@ -23,23 +23,23 @@
         },
         {
             "id": 4,
-            "name":,
-            "image":,
-            "artist":,
+            "name": "U Don't Know",
+            "image":"https://upload.wikimedia.org/wikipedia/en/2/2c/The_Blueprint.png",
+            "artist": "Jay-Z",
             "thumbsUp": false
         },
         {
             "id": 5,
-            "name":,
-            "image":,
-            "artist":,
+            "name": "Me Quedo",
+            "image":"https://i.scdn.co/image/ab67616d0000b27394622369386da9eac528e2fe",
+            "artist": "Romeo Santos",
             "thumbsUp": true
         },
         {
             "id": 6,
-            "name":,
-            "image":,
-            "artist":,
+            "name": "Tiempo pa' Matar",
+            "image":"https://fania.com/wp-content/uploads/2020/04/18CRGIM08199.jpg",
+            "artist": "Willie Colon",
             "thumbsUp": false
         },
         {
