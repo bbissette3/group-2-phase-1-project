@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         artistFooter.innerText = song.artist
 
         const deleteButton = document.createElement('button')
+        deleteButton.classList.add('delete-button')
         deleteButton.innerText = '🗑️'
 
         songLi.append(artistFooter, deleteButton)
