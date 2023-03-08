@@ -76,14 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             musicButton.addEventListener('click', (e) => {
                 handlePatch(musicButton, song.id)
-                // e.target.style.cssText = 'transform: scale(2) rotate(180deg)'
-                // e.target.classList.add('rotate')
-                // if (e.target.style.transform == 'scale(2) rotate(180deg)') {
-                //     e.target.style.trasform = 'scale(2) rotate(-180deg)'
-                // } else {
-                //     e.target.style.transform = 'scale(2) rotate(180deg)'
-                // }
-                // console.log(e.target.style)
             });
 
             songInfo.append(songName, songImg, musicArtist, musicButton)
