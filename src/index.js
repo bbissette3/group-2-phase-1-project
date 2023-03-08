@@ -1,6 +1,19 @@
 let showFirst = true;
+let addSong = false;
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    const addButton = document.querySelector('.toggle-form-button')
+    const formContainer = document.querySelector('#new-song-form')
+
+    addButton.addEventListener('click', () => {
+        addSong = !addSong;
+        if (addSong) {
+            formContainer.style.display = 'block'
+        } else {
+            formContainer.style.display = 'none'
+        }
+    });
 
     fetch('http://localhost:3000/songs')
     .then(response => response.json())
