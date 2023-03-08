@@ -77,7 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             songInfo.append(songName, songImg, musicArtist, musicButton)
-        }
+    }
+
     const form = document.getElementById('new-song-form')
         form.addEventListener('submit', (e) => {
             e.preventDefault();

@@ -54,6 +54,33 @@ form {
     align-items: center;
 }
 
+.scroller {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 200px;
+    height: 400px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar {
+     width: 10px;
+     height: 10px;
+}
+    
+::-webkit-scrollbar-thumb {
+    background: lightskyblue;
+    -webkit-box-shadow: none;
+}
+
+::-webkit-scrollbar-thumb:window-inactive{
+    background: none;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: none;
+}
+
+
 .box {
     float: left;
     width: 26%;
