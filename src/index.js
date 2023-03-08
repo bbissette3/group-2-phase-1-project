@@ -72,8 +72,18 @@ document.addEventListener('DOMContentLoaded', () => {
             musicButton.setAttribute('class', 'music-button')
             musicButton.innerText = song.thumbsUp === true ? '👍' : '👎'
 
+
+
             musicButton.addEventListener('click', (e) => {
                 handlePatch(musicButton, song.id)
+                // e.target.style.cssText = 'transform: scale(2) rotate(180deg)'
+                // e.target.classList.add('rotate')
+                // if (e.target.style.transform == 'scale(2) rotate(180deg)') {
+                //     e.target.style.trasform = 'scale(2) rotate(-180deg)'
+                // } else {
+                //     e.target.style.transform = 'scale(2) rotate(180deg)'
+                // }
+                // console.log(e.target.style)
             });
 
             songInfo.append(songName, songImg, musicArtist, musicButton)
@@ -118,7 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
             method: 'PATCH',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({thumbsUp: toPatch})
-        }) .then(() => {
+        }) 
+        .then(() => {
                 if(musicButton.innerText === '👍') {
                     musicButton.innerText = '👎'
                 } else {

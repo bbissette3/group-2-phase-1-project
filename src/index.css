@@ -23,14 +23,31 @@ form {
 .form-group input{
     font-size: 15px;
     margin-bottom: 10px;  
+    padding: 10px;
+    background: transparent;
+    color: black;
 }
 
-.form-group input {
-    padding: 10px;
+::placeholder{
+    color: black;
+    opacity: 1;
+}
+
+.form-group input:focus{
+    background: black;
+    color: white;
 }
 
 .submit-button {
     font-size: 20px;
+    background: transparent;
+    border-color: black;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: black;
+    color: white;
 }
 
 .button-toggle-container{
@@ -41,12 +58,14 @@ form {
 .toggle-form-button{
     font-size: 20px;
     background-color: transparent;
-    border: none;
+    border-color: black;
     cursor: pointer;
+    padding: 5px;
 }
 
 .toggle-form-button:hover {
-    background-color: white;
+    background-color: black;
+    color: white;
 }
 
 .container {
@@ -113,6 +132,7 @@ h2 {
 .complete-info-box h3 {
     font-size: 25px;
     text-align: center;
+    animation: fadein 2s;
 }
 
 .complete-info-box img {
@@ -120,6 +140,9 @@ h2 {
     width: 250px;
     display: block;
     margin: 0 auto;
+    animation: fadein 2s;
+    border: 2px solid black;
+    box-shadow: 5px 5px red;
 }
 
 .music-button {
@@ -133,8 +156,18 @@ h2 {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    animation: fadein 2s;
 }
 
+.music-button:active {
+    transform: scale(2) translateY(5px);
+    animation: fadein 2s;
+}
+
+@keyframes fadein {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
 
 li {
     cursor: pointer;
@@ -142,7 +175,8 @@ li {
 }
 
 li:hover {
-    background-color: #eee;
+    background: black;
+    color: white;
 }
 
 .delete-button {
