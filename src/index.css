@@ -12,23 +12,8 @@ h1 {
     font-size: 50px;
 }
 
-.button-toggle-container{
-    text-align: center;
-    padding-bottom: 10px;
-}
-
-.toggle-form-button{
-    font-size: 20px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.toggle-form-button:hover {
-    background-color: white;
-}
-
 form {
+    display: none;
     margin-bottom: 20px;
     text-align: center;
     padding-top: 10px;
@@ -46,6 +31,22 @@ form {
 
 .submit-button {
     font-size: 20px;
+}
+
+.button-toggle-container{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.toggle-form-button{
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.toggle-form-button:hover {
+    background-color: white;
 }
 
 .container {
@@ -106,6 +107,7 @@ h2 {
     border: none;
     cursor: pointer;
 }
+
 
 li {
     cursor: pointer;

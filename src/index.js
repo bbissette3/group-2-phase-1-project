@@ -46,12 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         songLi.addEventListener('click', (e) => {
             showSong(song)
-        })
+        });
 
         if(showFirst) {
             showSong(song) 
             showFirst = false
-        }
+        };
         
     };
 
