@@ -1,3 +1,5 @@
+let showFirst = true;
+
 document.addEventListener('DOMContentLoaded', () => {
 
     fetch('http://localhost:3000/songs')
@@ -10,21 +12,38 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const songUl = document.getElementById('music-summary')
         const songLi = document.createElement('li')
+        songLi.dataset.id = song.id
         songLi.innerText = song.name
         songUl.append(songLi)
-
-        const artistFooter = document.createElement('footer')
-        artistFooter.innerText = song.artist
 
         const deleteButton = document.createElement('button')
         deleteButton.setAttribute('class', 'delete-button')
         deleteButton.innerText = '🗑️'
 
-        songLi.append(artistFooter, deleteButton)
+        deleteButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            fetch(`http://localhost:3000/songs/${song.id}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(() => songLi.remove())
+        });
 
-        songLi.addEventListener('click', () => {
-            
-            const songInfo= document.querySelector('.song-info')
+        songLi.append(deleteButton)
+
+        songLi.addEventListener('click', (e) => {
+            showSong(song)
+        })
+
+        if(showFirst) {
+            showSong(song) 
+            showFirst = false
+        }
+        
+    };
+
+    function showSong(song) {
+        const songInfo= document.querySelector('.song-info')
             songInfo.innerText = ''
 
             const songName = document.createElement('h3')
@@ -40,12 +59,59 @@ document.addEventListener('DOMContentLoaded', () => {
             musicButton.setAttribute('class', 'music-button')
             musicButton.innerText = song.thumbsUp === true ? '👍' : '👎'
 
+            musicButton.addEventListener('click', (e) => {
+                handlePatch(musicButton, song.id)
+            });
+
             songInfo.append(songName, songImg, musicArtist, musicButton)
-        })
-    };
+        }
+    const form = document.getElementById('new-song-form')
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const newSong = document.getElementById('new-song').value
+            const newArtist = document.getElementById('new-artist').value
+            const newAlbumImg = document.getElementById('new-album-image').value
 
+            const newSongObj = {
+                name: newSong,
+                image: newAlbumImg,
+                artist: newArtist,
+                thumbsUp: true,
+            }
 
+            const configObj = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newSongObj)
+            }
 
+            fetch('http://localhost:3000/songs', configObj)
 
+            renderSongs(newSongObj)
+            form.reset();
+    });
 
-})
+    function handlePatch(musicButton, id) {
+        let toPatch;
+        if(musicButton.innerText === '👍'){
+            toPatch = false
+        }else toPatch = true
+
+        fetch(`http://localhost:3000/songs/${id}`, {
+            method: 'PATCH',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({thumbsUp: toPatch})
+        }) .then(() => {
+                if(musicButton.innerText === '👍') {
+                    musicButton.innerText = '👎'
+                } else {
+                    musicButton.innerText = '👍'
+            }
+         })
+
+    }   
+
+});

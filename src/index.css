@@ -1,3 +1,10 @@
+* {
+    font-family: arial;
+}
+
+body {
+    background-image: linear-gradient(to right, lightblue,orange,red)
+}
 
 h1 {
     text-align: center;
@@ -35,7 +42,7 @@ form {
     width: 26%;
     height: 70vh;
     border: 1px;
-    background-color: green;
+    
     padding-left: 10px;
     margin-right: 20px;
     
@@ -47,7 +54,7 @@ form {
     align-items: center;
     justify-content: flex-start;
     float: right;
-    background-color: red;
+
     width: 70%;
     height: 70vh;  
 }
@@ -86,22 +93,11 @@ h2 {
 
 li {
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 li:hover {
     background-color: #eee;
-}
-
-li footer {
-    margin-left: 10px;
-    margin-bottom: 10px;
-    display: in-line-block;
-
-}
-
-li footer::before {
-    content: "-";
-    margin-right: 5px;
 }
 
 .delete-button {
@@ -110,6 +106,6 @@ li footer::before {
     font-size: 15px;
     padding: 5px;
     float: right;
-    margin-top: -40px;
+    margin-top: -5px;
     cursor: pointer;
 }
