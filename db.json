@@ -62,6 +62,34 @@
       "image": "https://upload.wikimedia.org/wikipedia/en/2/26/HaveaCigar.jpg",
       "artist": "Pink Floyd",
       "thumbsUp": true
+    },
+    {
+      "name": "Schism",
+      "image": "http://1.bp.blogspot.com/-JxdwWozePC8/UDnCQzQhk5I/AAAAAAAAMcY/Rslw6GODtZ0/s500/tool_schism.png",
+      "artist": "Tool",
+      "thumbsUp": true,
+      "id": 10
+    },
+    {
+      "name": "1901: A Canyon Odyssey",
+      "image": "http://images.genius.com/b8255b3bb93530201b95495514cf016b.1000x1000x1.jpg",
+      "artist": "The Infamous Stringdusters",
+      "thumbsUp": true,
+      "id": 11
+    },
+    {
+      "name": "Windshield",
+      "image": "http://images.genius.com/4e09acaf172a3941188af29aedbb0424.1000x1000x1.jpg",
+      "artist": "Greensky Bluegrass",
+      "thumbsUp": true,
+      "id": 12
+    },
+    {
+      "name": "Dust in a Baggie",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61v75h5ZfWL._SL500_AA280_.jpg",
+      "artist": "Billy Strings",
+      "thumbsUp": true,
+      "id": 13
     }
   ]
 }
