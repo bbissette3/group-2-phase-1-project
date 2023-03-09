@@ -21,9 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
         songs.forEach((song) => renderSongs(song))
     });
 
+    const songUl = document.getElementById('music-summary')
+
     function renderSongs(song) {
-        
-        const songUl = document.getElementById('music-summary')
+          
         const songLi = document.createElement('li')
         songLi.dataset.id = song.id
         songLi.innerText = song.name
@@ -129,6 +130,30 @@ document.addEventListener('DOMContentLoaded', () => {
             }
          })
 
-    }   
+    }  
+    
+    const selectSortBy = document.getElementById('sort-by')
+    selectSortBy.addEventListener('change', () => {
+        
+        const sortBy = selectSortBy.value
+        
+        fetch('http://localhost:3000/songs')
+        .then(response => response.json())
+        .then(songs => { 
+            let sortedSongs;
+            if(sortBy === 'thumbs-up') {
+                songUl.innerText = ''
+                sortedSongs = songs.filter(songs => songs.thumbsUp === true);
+            } else if (sortBy === 'thumbs-down') {
+                songUl.innerText = ''
+                sortedSongs = songs.filter(songs => songs.thumbsUp === false);
+            } else {
+                songUl.innerText = ''
+                sortedSongs = songs;
+            }
+            
+            sortedSongs.forEach(song => renderSongs(song))
+        });  
+    });
 
 });
