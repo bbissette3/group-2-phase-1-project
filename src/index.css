@@ -92,10 +92,11 @@ select {
 
 .container {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 }
 
-.scroller {
+ul.scroller {
     overflow-y: scroll;
     overflow-x: hidden;
     width: 200px;
@@ -123,11 +124,13 @@ select {
 
 
 .box {
+    display: flex;
+    flex-basis: 40%;
+    flex-shrink: 1;
     float: left;
-    width: 26%;
+    
     height: 70vh;
     border: 1px;
-    
     padding-left: 10px;
     margin-right: 20px;
     
@@ -137,11 +140,8 @@ select {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    float: right;
-
-    width: 70%;
-    height: 70vh;  
+    justify-content: relative;
+    height: 70vh; 
 }
 
 
@@ -149,6 +149,7 @@ h2 {
     text-align: center;
     font-size: 50px;
     margin-bottom: 10px;
+    margin-top: -20px;
 }
 
 .complete-info-box h3 {
@@ -158,8 +159,8 @@ h2 {
 }
 
 .complete-info-box img {
-    height: 250px;
-    width: 250px;
+    height: 400px;
+    width: 400px;
     display: block;
     margin: 0 auto;
     animation: fadein 2s;
@@ -169,11 +170,7 @@ h2 {
 
 .music-button {
     display: block;
-    margin-top: -65px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 150px;
-    height: 150px;
+    margin: auto;
     transform: scale(4);
     background-color: transparent;
     border: none;
