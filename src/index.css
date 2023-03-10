@@ -90,6 +90,10 @@ select {
     background: transparent;
 }
 
+select option {
+    background-color: lightskyblue;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -99,7 +103,7 @@ select {
 ul.scroller {
     overflow-y: scroll;
     overflow-x: hidden;
-    width: 200px;
+    width: 300px;
     height: 400px;
     background-color: transparent;
 }
@@ -159,8 +163,8 @@ h2 {
 }
 
 .complete-info-box img {
-    height: 400px;
-    width: 400px;
+    height: 200px;
+    width: 200px;
     display: block;
     margin: 0 auto;
     animation: fadein 2s;
@@ -207,3 +211,43 @@ li:hover {
     margin-top: -5px;
     cursor: pointer;
 }
+
+
+footer {
+    background-color: none;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.music-notes {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.music-notes img {
+    width: 50px;
+    height: auto;
+    margin: 0 10px;
+    float: left;
+    margin-right: 10px;
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
