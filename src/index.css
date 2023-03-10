@@ -95,9 +95,11 @@ select option {
 }
 
 .container {
+    position: relative; /*just added*/
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    padding-bottom: 20px; /* just added */
 }
 
 ul.scroller {
@@ -214,13 +216,9 @@ li:hover {
 
 
 footer {
+    text-align: center;
+    margin-top: 10px;
     background-color: none;
-    height: 20vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
     width: 100%;
 }
 
