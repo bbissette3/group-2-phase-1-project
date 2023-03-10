@@ -1,5 +1,5 @@
 * {
-    font-family: arial;
+    font-family: helvetica;
 }
 
 body {
@@ -88,18 +88,28 @@ form {
 
 select {
     background: transparent;
+    appearance: none;
+    border: 1px solid black;
+    padding: 5px;
+    display: inline-block;
+    width: 50px;
 }
 
 select option {
     background-color: lightskyblue;
+    display: inline-block;
+    padding: 5px;
+    margin: 0;
+    border: none;
+    
 }
 
 .container {
-    position: relative; /*just added*/
+    position: relative; 
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding-bottom: 20px; /* just added */
+    padding-bottom: 20px; 
 }
 
 ul.scroller {
